@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="fr">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Paint-Ball Adapté</title>
+
+		<meta name="description" content="Site web pour Paint-Ball Adapté">
+		<meta name="author" content="Honoré NINTUNZE, Antoine PETIT, Alexandre MOEVI et Yann LESAGE">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link rel="stylesheet" href="lib/bootstrap/bootstrap.min.css">
+		<link rel="stylesheet" href="styles/style.css">
+
+	</head>
+
+	<body ng-app="pmr" ng-controller="ctrl">
+		<navbar-login></navbar-login>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-2 col-sm-3 pmr-sidebar">
+					<ul class="nav pmr-nav-sidebar">
+						<li><a href="#">Planning</a></li>
+						<li class="active"><a href="#">Mon classement</a></li>
+						<li><a href="#">Historique des scores</a></li>
+						<li><a href="#">Mes Points de fidélités</a></li>
+						<li><a href="#">Mes vidéos</a></li>
+						<li><a href="#">Boîte à idée</a></li>
+					</ul>
+				</div>
+				<div class="col-md-10 col-md-offset-2 col-sm-9 col-sm-offset-3 pmr-main">
+						<h1 class="page-header">TOTO</h1>
+				</div>
+			</div>
+		</div>
+		<footer class="pmr-footer">
+			<div class="container">
+				<p class="text-footer text-center">LE footer</p>
+			</div>
+		</footer>
+
+		<!-- lib angular js scripts -->
+		<script type="text/javascript" src="lib/angular/angular.min.js"></script>
+		<script type="text/javascript" src="lib/angular/angular-ui-router.min.js"></script>
+
+		<!-- angular app model-->
+		<script type="text/javascript" src="scripts/pmr.mdl.js"></script>
+		<!-- angular services -->
+		<script type="text/javascript" src="scripts/users.service.js"></script>
+		<!-- angular directives -->
+		<script type="text/javascript" src="scripts/navbar-login.directive.js"></script>
+		<!-- angular controllers -->
+	</body>
+</html>

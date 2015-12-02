@@ -1,0 +1,20 @@
+<nav class="navbar navbar-fixed-top pmr-top">
+  <div class="container">
+    <div class="navbar-header">
+      <h1 class="navbar-brand">Paint Ball adapté</h1>
+    </div>
+    <div class="navbar-collapse collapse">
+      <form class="navbar-form navbar-right" ng-class="{pmr-form-error: haserror && !isloggedin}">
+        <div>
+          <div class="form-group" ng-class="{has-error: haserror && !isloggedin}">
+            <input type"email" placeholder="Email" class="form-control">
+            <input type"password" placeholder="Mot de passe" class="form-control">
+          </div>
+          <button type="submit" class="btn btn-success" ng-if="!isloggedin" ng-click="signin()">Connexion</button>
+          <button type="submit" class="btn btn-deco" ng-if="isloggedin" ng-click="deco()">Déconnexion</button>
+        </div>
+        <span ng-if="haserror && !isloggedin" class="small text-danger">Identifiant ou mot de passe invalide.</span>
+      </form>
+    </div>
+  </div>
+</nav>
