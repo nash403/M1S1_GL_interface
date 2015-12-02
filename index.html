@@ -19,11 +19,11 @@
 
 	</head>
 
-	<body ng-app="pmr" ng-controller="ctrl">
+	<body ng-app="pmr">
 		<navbar-login></navbar-login>
 		<div class="container-fluid">
 			<div class="row">
-				<div class="col-md-2 col-sm-3 pmr-sidebar">
+				<div class="col-md-2 col-sm-3 pmr-sidebar" side-options="">
 					<ul class="nav pmr-nav-sidebar">
 						<li><a href="#">Planning</a></li>
 						<li class="active"><a href="#">Mon classement</a></li>
@@ -51,9 +51,9 @@
 		<!-- angular app model-->
 		<script type="text/javascript" src="scripts/pmr.mdl.js"></script>
 		<!-- angular services -->
-		<script type="text/javascript" src="scripts/users.service.js"></script>
+		<script type="text/javascript" src="scripts/services/users.service.js"></script>
 		<!-- angular directives -->
-		<script type="text/javascript" src="scripts/navbar-login.directive.js"></script>
-		<!-- angular controllers -->
+		<script type="text/javascript" src="scripts/directives/navbar-login.directive.js"></script>
+		<script type="text/javascript" src="scripts/directives/side-options.directive.js"></script>
 	</body>
 </html>

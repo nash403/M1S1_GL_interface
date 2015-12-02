@@ -1,5 +1,2 @@
 angular
-  .module('pmr',['ui.router'])
-  .controller('ctrl',['$scope',function($scope){
-
-  }]);
+  .module('pmr',['ui.router']);

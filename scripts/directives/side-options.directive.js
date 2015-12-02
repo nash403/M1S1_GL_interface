@@ -1,6 +1,6 @@
 angular
   .module('pmr')
-  .directive('navbarLogin',['users',function (users){
+  .directive('sideOptions',['users',function (users){
     return {
       restrict:'EA',
       scope:{},
@@ -9,16 +9,15 @@ angular
       link: function(scope){
         scope.isloggedin = false;
         scope.haserror=false;
-
-        scope.$watch(() => { return users.isloggedin;},function (newValue, oldValue) {
-          scope.isloggedin = newValue != oldValue ? newValue: oldValue;
-          scope.haserror = users.isloggedin;
-        })
         scope.signin = function (l,m){
-          users.signin(l,m);
+          console.log("sign");
+          scope.isloggedin = users.signin(l,m);
+          scope.haserror = users.isloggedin;
         }
         scope.deco = function(){
           users.deco();
+          scope.isloggedin = false;
+          scope.haserror = false;
         }
       }
     }
