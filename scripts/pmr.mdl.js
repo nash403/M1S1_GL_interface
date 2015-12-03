@@ -1,2 +1,2 @@
 angular
-  .module('pmr',['ui.router']);
+  .module('pmr',['ui.router','ui.bootstrap']);

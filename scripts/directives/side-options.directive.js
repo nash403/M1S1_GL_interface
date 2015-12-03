@@ -1,24 +1,42 @@
 angular
   .module('pmr')
-  .directive('sideOptions',['users',function (users){
+  .directive('sideOptions',[function (){
     return {
       restrict:'EA',
-      scope:{},
       replace:true,
-      templateUrl:'views/navbar-login/navbar-login.view.html',
+      templateUrl:'views/side-nav/side-options.view.html',
       link: function(scope){
-        scope.isloggedin = false;
-        scope.haserror=false;
-        scope.signin = function (l,m){
-          console.log("sign");
-          scope.isloggedin = users.signin(l,m);
-          scope.haserror = users.isloggedin;
-        }
-        scope.deco = function(){
-          users.deco();
-          scope.isloggedin = false;
-          scope.haserror = false;
-        }
+        scope.options = [
+          {
+            name:"Planning",
+            id:"planning",
+            selected:true
+          },
+          {
+            name:"Mon classement",
+            id:"classement",
+            selected:false
+          },
+          {
+            name:"Historique des scores",
+            id:"historique",
+            selected:false
+          },
+          {
+            name:"Mes points de fidélité",
+            id:"fidelite",
+            selected:false
+          },
+          {
+            name:"Mes vidéos",
+            id:"videos",
+            selected:false
+          },
+          {
+            name:"Boîte à idéee",
+            id:"idee",
+            selected:false
+          }];
       }
     }
   }]);

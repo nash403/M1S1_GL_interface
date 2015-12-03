@@ -23,18 +23,10 @@
 		<navbar-login></navbar-login>
 		<div class="container-fluid">
 			<div class="row">
-				<div class="col-md-2 col-sm-3 pmr-sidebar" side-options="">
-					<ul class="nav pmr-nav-sidebar">
-						<li><a href="#">Planning</a></li>
-						<li class="active"><a href="#">Mon classement</a></li>
-						<li><a href="#">Historique des scores</a></li>
-						<li><a href="#">Mes Points de fidélités</a></li>
-						<li><a href="#">Mes vidéos</a></li>
-						<li><a href="#">Boîte à idée</a></li>
-					</ul>
-				</div>
+				<side-options></side-options>
 				<div class="col-md-10 col-md-offset-2 col-sm-9 col-sm-offset-3 pmr-main">
 						<h1 class="page-header">TOTO</h1>
+						<pmr-planning></pmr-planning>
 				</div>
 			</div>
 		</div>
@@ -47,6 +39,8 @@
 		<!-- lib angular js scripts -->
 		<script type="text/javascript" src="lib/angular/angular.min.js"></script>
 		<script type="text/javascript" src="lib/angular/angular-ui-router.min.js"></script>
+		<script type="text/javascript" src="lib/angular/angular-animate.min.js"></script>
+		<script type="text/javascript" src="lib/angular/ui-bootstrap.min.js"></script>
 
 		<!-- angular app model-->
 		<script type="text/javascript" src="scripts/pmr.mdl.js"></script>
@@ -55,5 +49,7 @@
 		<!-- angular directives -->
 		<script type="text/javascript" src="scripts/directives/navbar-login.directive.js"></script>
 		<script type="text/javascript" src="scripts/directives/side-options.directive.js"></script>
+		<script type="text/javascript" src="scripts/directives/side-option.directive.js"></script>
+		<script type="text/javascript" src="scripts/directives/pmr-planning.directive.js"></script>
 	</body>
 </html>
