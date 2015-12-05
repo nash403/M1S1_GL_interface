@@ -1,0 +1,51 @@
+<div ><!--pmr-inscription=""-->
+  <div class="modal-header">
+    <h3 class="modal-title">Inscription à la séance du {{ sc.date | date: 'EEEE, d MMMM yyyy' }}<br/><small>créneau {{ sc.cr.debut | date: 'HH:mm' }} - {{ sc.cr.fin | date: 'HH:mm' }} ({{ sc.cr.participating }} participants)</small></h3>
+  </div>
+  <div class="modal-body">
+    <form id="fromi" name="form">
+      <div class="form-group">
+        <label for="exampleInputEmail1">Email</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" name="uEmail" placeholder="Email" >
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Nom complet</label>
+        <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Nom" name="uName" >
+      </div>
+      <div class="form-group">
+        <label for="addr1">Adresse Ligne 1</label>
+        <input type="text" class="form-control" id="addr1" placeholder="Adresse Ligne 1" name="uAddr1" >
+        <label for="addr2">Adresse Ligne 2</label>
+        <input type="text" class="form-control" id="addr2" placeholder="Adresse Ligne 2" name="uAddr2" >
+        <label for="zip">Code Postal</label>
+        <input type="number" class="form-control" id="zip" placeholder="Code Postal" name="cp" >
+      </div>
+      <div class="form-group">
+        <label>Paiement par carte bancaire</label>
+      <div class="row">
+        <div class="col-xs-6">
+          <input type="text" class="form-control" placeholder="Numéro de carte bleu" name="no" >
+        </div>
+        <div class="col-xs-2">
+          <input type="number" class="form-control" placeholder="Mois" min="1" max="12" name="mois" >
+        </div>
+        <div class="col-xs-2">
+          <input type="number" class="form-control" placeholder="Annee" min="2015" name="ann" max="2020" >
+        </div>
+        <div class="col-xs-2">
+          <input type="text" class="form-control" placeholder="No. de sécurité" name="nosec" >
+        </div>
+      </div></div>
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" required=""  ng-model="checked" name="lu"> J'ai lu et j'accepte les conditions
+        </label>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-primary" type="submit" form="fromi" ng-click="ok()"
+    ng-disabled="!checked" >OK</button>
+    <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+  </div>
+</div>

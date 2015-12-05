@@ -11,7 +11,7 @@
       <form class="navbar-form navbar-right" ng-class="{'pmr-form-error': haserror && !isloggedin}">
         <div>
           <div class="form-group" ng-class="{'has-error': haserror && !isloggedin}" ng-show="!isloggedin">
-            <input type="text" placeholder="Login" class="form-control" ng-model="identifiant">
+            <input type="text" placeholder="Identifiant" class="form-control" ng-model="identifiant">
             <input type="password" placeholder="Mot de passe" class="form-control" ng-model="pass">
           </div>
           <button type="submit" class="btn btn-success" ng-if="!isloggedin" ng-click="signin(identifiant,pass)">Connexion</button>

@@ -1,0 +1,20 @@
+<div ><!--pmr-inscription=""-->
+  <div class="modal-header">
+    <h3 class="modal-title">Désinscription à la séance du {{ sc.date | date: 'EEEE, d MMMM yyyy' }}<br/><small>créneau {{ sc.cr.debut | date: 'HH:mm' }} - {{ sc.cr.fin | date: 'HH:mm' }} ({{ sc.cr.participating }} participants)</small></h3>
+  </div>
+  <div class="modal-body">
+    Êtes vous sûr de vouloir vous désinscrire de cette séance ? (vous serez remboursé en totalité)
+    <form id="fromi" name="form">
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" required=""  ng-model="checked" name="lu"> Je me désincris
+        </label>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-primary" type="submit" form="fromi" ng-click="valider()"
+    ng-disabled="!checked" >OK</button>
+    <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+  </div>
+</div>

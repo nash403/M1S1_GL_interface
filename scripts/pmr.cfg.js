@@ -17,4 +17,24 @@ angular
         url : '/planning',
         templateUrl : 'views/seances/seances.view.html'
       })
+      .state('planning.inscription', {
+        url: '/planning/inscription',
+        templateUrl: 'views/seances/inscription.view..html'
+      })
+      .state('classement', {
+        url : '/classement',
+        templateUrl : 'views/classement/classement.view.html'
+      })
+      .state('historique', {
+        url : '/historique',
+        templateUrl : 'views/classement/historique.view.html'
+      })
+      .state('videos', {
+        url : '/videos',
+        templateUrl : 'views/videos/mes-videos.view.html'
+      })
+      .state('fidelite', {
+        url : '/fidelite',
+        templateUrl : 'views/fidelisation/pts-fidelite.view.html'
+      })
   }

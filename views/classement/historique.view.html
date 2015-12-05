@@ -1,0 +1,34 @@
+<div pmr-historique="">
+  <h1 class="page-header">Historique des scores</h1>
+  <table class="table table-bordered table-hover">
+    <thead>
+      <tr>
+        <th>
+          <td>
+            <strong>Identifiant</strong>
+          </td>
+          <td>
+            <strong>Position Générale</strong>
+          </td>
+          <td>
+            <strong>Total Points</strong>
+          </td>
+      </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="p in all" ng-class="{ 'success' : p.id == 'pmr'}">
+        <td></td>
+        <td>
+          {{ p.id }}
+        </td>
+        <td>
+          {{ p.pos }}
+        </td>
+        <td>
+          {{ p.pts }} pts
+        </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

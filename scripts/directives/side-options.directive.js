@@ -39,13 +39,13 @@ angular
             id:"videos",
             selected:false,
             requireCo:true
-          },
+          }/*,
           {
             name:"Boîte à idéee",
             id:"idee",
             selected:false,
             requireCo:true
-          }];
+          }*/];
       }
     }
   }]);

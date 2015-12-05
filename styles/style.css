@@ -1,7 +1,7 @@
 div.home {
   display: inline;
 }
-.jumbotron.accueil {
+.top-marge {
   margin-top: 50px;
 }
 .home span {
@@ -98,3 +98,25 @@ form.pmr-form-error {
   min-width: 50px;
   display: inline-block;
 }
+span.completude-info {
+  margin-left: 40px;
+}
+
+.table>thead:first-child>tr:first-child>th:first-child
+{
+    display: none;
+}
+.table> tbody > tr > td:first-child
+{
+    display: none;
+
+}
+/*.table>thead:first-child>tr:first-child>th:nth-child(2)
+{
+    padding-left:40px;
+}
+.table> tbody > tr > td:nth-child(2)
+{
+    padding-left:50px !important;
+
+}*/

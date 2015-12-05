@@ -1,11 +1,11 @@
 angular
   .module('pmr')
-  .directive('pmrPlanning',['seances', 'users', function (seances,users){
+  .directive('pmrPlanning',['seances', 'users','$location', function (seances,users,$location){
     return {
       restrict:'EA',
       controllerAs:'$ctrl',
       bindToController:true,
-      controller: ['$scope', function($scope){
+      controller: ['$scope','$uibModal', function($scope,$uibModal){
         //console.log(seances);
         var today = new Date();
         $scope.dt = today;
@@ -14,6 +14,12 @@ angular
         $scope.getCreneaux = (date) => { return seances.get(date); };
         $scope.currentCr = $scope.getCreneaux($scope.dt);
         $scope.noCreneau = $scope.currentCr.length == 0?false:true;
+        $scope.newSc = false;
+        $scope.alert = {};
+        $scope.closeAlert = () => {
+          $scope.alert = {};
+          $scope.newSc = false;
+        }
         $scope.$watch(()=>{ return $scope.dt; },(newValue,oldValue) => {
           if (newValue != oldValue) {
             $scope.currentCr = $scope.getCreneaux($scope.dt);
@@ -24,6 +30,74 @@ angular
             $scope.noCreneau = newValue == 0? false : true;
           }
         });
+        $scope.sinscrire = (date, creneau,idx) => {
+          console.log('aaaaa',idx);
+          var modalInstance = $uibModal.open({
+            animation: true,
+            templateUrl: 'views/seances/inscription.view.html',
+            controller: 'ModalInstanceCtrl',
+            size: 'lg',
+            resolve: {
+              seance: function () {
+                return {
+                  date:date,
+                  cr:creneau,
+                  id:idx
+                };
+              }
+            }
+          });
+
+          modalInstance.result.then(function (sc) {
+            $scope.newSc = true;
+            console.log("gzgzr",sc);
+            users.subscribe(sc.date,sc.id);
+            $scope.alert = {
+              type:'success',
+              msg:"Inscription à la séance prise en compte."
+            }
+            console.log(users.isSubcribed(new Date(sc.date),sc));
+          }, function () {
+            $scope.newSc = true;
+            $scope.alert = {
+              type:'danger',
+              msg:"Inscription à la séance annulée."
+            }
+          });
+        };
+        $scope.desinscrire = (date, creneau,idx) => {
+          console.log('aaaaa',idx);
+          var modalInstance = $uibModal.open({
+            animation: true,
+            templateUrl: 'views/seances/desinscription.view.html',
+            controller: 'ModalInstanceCtrl',
+            size: 'sm',
+            resolve: {
+              seance: function () {
+                return {
+                  date:date,
+                  cr:creneau,
+                  id:idx
+                };
+              }
+            }
+          });
+
+          modalInstance.result.then(function (sc) {
+            $scope.newSc = true;
+            users.unsubscribe(sc.date,sc.id);
+            $scope.alert = {
+              type:'success',
+              msg:"Désinscription à la séance prise en compte."
+            }
+          }, function () {
+            $scope.newSc = true;
+            $scope.alert = {
+              type:'danger',
+              msg:"Vous n'avez pas annulé la séance."
+            }
+          });
+        };
         $scope.isCo = () => {
           return users.isloggedin;
         }
@@ -44,4 +118,20 @@ angular
         };
       }]
     }
-  }]);
+  }])
+  .controller('ModalInstanceCtrl', function ($scope, $uibModalInstance, seance) {
+    $scope.sc = seance;
+
+    $scope.valider = function () {
+      $scope.sc.cr.participating--;
+      $uibModalInstance.close($scope.sc);
+    };
+    $scope.ok = function () {
+      $scope.sc.cr.participating++;
+      $uibModalInstance.close($scope.sc);
+    };
+
+    $scope.cancel = function () {
+      $uibModalInstance.dismiss('cancel');
+    };
+  });

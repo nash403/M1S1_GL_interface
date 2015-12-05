@@ -16,7 +16,7 @@ angular
         ]
       }
     };
-    var c = null;
+    var c = "pmr";
     var adm = false;
     return {
       signin: function (login,mdp) {
@@ -29,7 +29,7 @@ angular
         if (adm)adm = false;
         c = null;
       },
-      isloggedin:false,
+      isloggedin:true,
       current: function() { return c;},
       isSubcribed: function (date,cr){
         if (!this.isloggedin) return false;
@@ -49,14 +49,16 @@ angular
         });
         return true;
       },
-      unsubsribe: function(date) {
+      unsubscribe: function(date,cr) {
         if (!this.isloggedin) return false;
         var dayToCheck = new Date(date).setHours(0,0,0,0);
         for (var i = 0; i < users[this.current()].subscribedto.length; i++) {
           var currentDay = new Date(users[this.current()].subscribedto[i].date).setHours(0,0,0,0);
           if (dayToCheck == currentDay)
-            delete users[this.current()].subscribedto[i];
-            return true;
+            if (users[this.current()].subscribedto[i].cr == cr) {
+              users[this.current()].subscribedto.splice(i,1);
+              return true;
+            }
         }
         return false;
       }

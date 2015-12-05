@@ -1,0 +1,48 @@
+<div pmr-classement="">
+  <h1 class="page-header">Mon classement</h1>
+  <div class="panel panel-default" ng-repeat="sc in myseances">
+    <div class="panel-heading">
+      <h3 class="panel-title">Séances du {{ sc.date | date: 'EEEE, d MMMM yyyy' }}</h3>
+    </div>
+    <div class="panel-body">
+      <div class="panel panel-info" ng-repeat="cr in sc.creneaux">
+        <div class="panel-heading">
+          <h3 class="panel-title">Créneau  {{ cr.debut | date: 'HH:mm' }} - {{ cr.fin | date: 'HH:mm' }} ({{ cr.participating }} participants)</h3>
+        </div>
+        <div class="panel-body">
+          <table class="table table-bordered table-hover">
+            <thead>
+              <tr>
+                <th>
+                  <td>
+                    <strong>Identifiant</strong>
+                  </td>
+                  <td>
+                    <strong>Position</strong>
+                  </td>
+                  <td>
+                    <strong>Points</strong>
+                  </td>
+              </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="p in cr.all" ng-class="{ 'success' : p.id == 'pmr'}">
+                <td></td>
+                <td>
+                  {{ p.id }}
+                </td>
+                <td>
+                  {{ p.pos }} / {{ cr.participating }}
+                </td>
+                <td>
+                  {{ p.pts }} pts
+                </td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
