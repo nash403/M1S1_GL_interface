@@ -27,11 +27,11 @@ angular
       })
       .state('classement', {
         url : '/classement',
-        templateUrl : 'views/classement/classement.view.html'
+        templateUrl : 'views/classement/historique.view.html'
       })
       .state('historique', {
         url : '/historique',
-        templateUrl : 'views/classement/historique.view.html'
+        templateUrl : 'views/classement/classement.view.html'
       })
       .state('videos', {
         url : '/videos',
