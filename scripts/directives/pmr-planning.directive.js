@@ -1,12 +1,11 @@
 angular
   .module('pmr')
-  .directive('pmrPlanning',['seances', 'users','$location', function (seances,users,$location){
+  .directive('pmrPlanning',['seances', 'users', function (seances,users){
     return {
       restrict:'EA',
       controllerAs:'$ctrl',
       bindToController:true,
       controller: ['$scope','$uibModal', function($scope,$uibModal){
-        //console.log(seances);
         var today = new Date();
         $scope.dt = today;
         $scope.minDate = new Date();
@@ -31,7 +30,6 @@ angular
           }
         });
         $scope.sinscrire = (date, creneau,idx) => {
-          console.log('aaaaa',idx);
           var modalInstance = $uibModal.open({
             animation: true,
             templateUrl: 'views/seances/inscription.view.html',
@@ -50,13 +48,11 @@ angular
 
           modalInstance.result.then(function (sc) {
             $scope.newSc = true;
-            console.log("gzgzr",sc);
-            users.subscribe(sc.date,sc.id);
+            users.subscribe(sc.date,sc.id,sc.cr);
             $scope.alert = {
               type:'success',
               msg:"Inscription à la séance prise en compte."
             }
-            console.log(users.isSubcribed(new Date(sc.date),sc));
           }, function () {
             $scope.newSc = true;
             $scope.alert = {
@@ -66,7 +62,6 @@ angular
           });
         };
         $scope.desinscrire = (date, creneau,idx) => {
-          console.log('aaaaa',idx);
           var modalInstance = $uibModal.open({
             animation: true,
             templateUrl: 'views/seances/desinscription.view.html',
@@ -121,7 +116,10 @@ angular
   }])
   .controller('ModalInstanceCtrl', function ($scope, $uibModalInstance, seance) {
     $scope.sc = seance;
-
+    $scope.don = 0;
+    $scope.finish = function () {
+      $uibModalInstance.close();
+    }
     $scope.valider = function () {
       $scope.sc.cr.participating--;
       $uibModalInstance.close($scope.sc);

@@ -19,7 +19,7 @@
 
 	</head>
 
-	<body ng-app="pmr">
+	<body ng-app="pmr" ng-controller="ctrlGnl">
 		<navbar-login></navbar-login>
 		<div class="container-fluid">
 			<div class="row">
@@ -31,7 +31,7 @@
 		</div>
 		<footer class="pmr-footer">
 			<div class="container">
-				<p class="text-footer text-center">LE footer</p>
+				<p class="text-footer text-center"><a href="#">Plan de site</a><a href="#">Contacts</a></p>
 			</div>
 		</footer>
 
@@ -52,6 +52,8 @@
 		<script type="text/javascript" src="scripts/services/user-seances.service.js"></script>
 		<script type="text/javascript" src="scripts/services/historique.service.js"></script>
 		<!-- angular directives -->
+		<script type="text/javascript" src="scripts/controllers/events.controller.js"></script>
+		<!-- angular directives -->
 		<script type="text/javascript" src="scripts/directives/accueil.directive.js"></script>
 		<script type="text/javascript" src="scripts/directives/navbar-login.directive.js"></script>
 		<script type="text/javascript" src="scripts/directives/side-options.directive.js"></script>
@@ -60,5 +62,6 @@
 		<script type="text/javascript" src="scripts/directives/pmr-classement.directive.js"></script>
 		<script type="text/javascript" src="scripts/directives/pmr-historique.directive.js"></script>
 		<script type="text/javascript" src="scripts/directives/pmr-mes-videos.directive.js"></script>
+		<script type="text/javascript" src="scripts/directives/pmr-seances.directive.js"></script>
 	</body>
 </html>

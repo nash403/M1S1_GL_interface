@@ -1,0 +1,18 @@
+<div>
+  <div class="modal-header">
+    <h3 class="modal-title">Don à l'association</h3>
+  </div>
+  <div class="modal-body">
+    <div class="form-inline">
+        <button type="button" class="btn btn-primary" ng-click="don = 5">5€</button>
+        <button type="button" class="btn btn-primary" ng-click="don = 10">10€</button>
+        <button type="button" class="btn btn-primary" ng-click="don = 15">15€</button>
+        <input type="number" class="form-control" placeholder="Autre" ng-model="don" min="1"/>
+    </div>
+    Vous voulez donner {{ don }}€.
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-primary" type="submit"ng-click="finish()">OK</button>
+    <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+  </div>
+</div>

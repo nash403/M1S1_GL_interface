@@ -1,6 +1,6 @@
 angular
   .module('pmr')
-  .directive('sideOptions',['users', function (users){
+  .directive('sideOptions',['users','$state', function (users,$state){
     return {
       restrict:'EA',
       replace:true,
@@ -13,37 +13,36 @@ angular
           {
             name:"Planning des séances",
             id:"planning",
-            selected:false,
             requireCo:false
+          },
+          {
+            name:"Mes séances",
+            id:"seances",
+            requireCo:true
           },
           {
             name:"Mon classement",
             id:"classement",
-            selected:false,
             requireCo:true
           },
           {
             name:"Historique des scores",
             id:"historique",
-            selected:false,
             requireCo:true
           },
           {
             name:"Mes points de fidélité",
             id:"fidelite",
-            selected:false,
             requireCo:true
           },
           {
             name:"Mes vidéos",
             id:"videos",
-            selected:false,
             requireCo:true
           }/*,
           {
             name:"Boîte à idéee",
             id:"idee",
-            selected:false,
             requireCo:true
           }*/];
       }

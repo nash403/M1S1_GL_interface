@@ -21,6 +21,10 @@ angular
         url: '/planning/inscription',
         templateUrl: 'views/seances/inscription.view..html'
       })
+      .state('seances', {
+        url : '/seances',
+        templateUrl : 'views/seances/mes-seances.view.html'
+      })
       .state('classement', {
         url : '/classement',
         templateUrl : 'views/classement/classement.view.html'

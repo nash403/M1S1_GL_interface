@@ -9,7 +9,18 @@
 </div>
 <div class="alert alert-info don" role="alert">
   <span>L'association a besoin de vous ! Faites un don pour nous aider à promouvoir nos activités ! On compte sur vous !</span>
-  <a href="#" class="btn btn-primary pull-right">
+  <a href="#" class="btn btn-primary pull-right" ng-click="donate()">
     Faire un don <span class="glyphicon glyphicon-eur align-right"></span>
   </a>
+</div>
+<uib-alert type="{{alertdonation.type}}" close="close()" ng-if="donatestatus">{{alertdonation.msg}}</uib-alert>
+<div style="height: 290px" ng-controller="carousel">
+  <uib-carousel interval="myInterval" no-wrap="noWrapSlides">
+    <uib-slide ng-repeat="slide in slides" active="slide.active">
+      <img ng-src="{{slide.image}}" style="margin:auto;">
+      <div class="carousel-caption">
+        <h1><a href="#">{{slide.text}}</a></h1>
+      </div>
+    </uib-slide>
+  </uib-carousel>
 </div>

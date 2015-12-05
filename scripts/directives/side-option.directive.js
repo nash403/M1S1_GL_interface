@@ -1,11 +1,14 @@
 angular
   .module('pmr')
-  .directive('sideOption',[function (){
+  .directive('sideOption',['$state',function ($state){
     return {
       restrict:'EA',
       link: function(scope,element,attrs){
-        scope.toggle = () => {
-          scope.opt.selected = !scope.opt.selected;
+        scope.toggle = (id) => {
+          $state.go(id);
+        }
+        scope.compatible = (id) => {
+          return $state.is(id);
         }
       }
     }

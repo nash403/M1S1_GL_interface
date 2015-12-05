@@ -1,0 +1,19 @@
+<div pmr-seances="">
+  <h1 class="page-header">Les séances auxquelles je suis inscris</h1>
+  <div class="alert alert-danger" ng-if="myseances.length == 0">Je ne suis inscris à aucunes séances.</div>
+  <div class="panel panel-default" ng-repeat="sc in myseances">
+    <div class="panel-heading">
+      <h3 class="panel-title">Séances du {{ sc.date | date: 'EEEE, d MMMM yyyy' }}</h3>
+    </div>
+    <div class="panel-body">
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <h3 class="panel-title">Créneau  {{ sc.detail.debut | date: 'HH:mm' }} - {{ sc.detail.fin | date: 'HH:mm' }}</h3>
+        </div>
+        <div class="panel-body">
+          {{ sc.detail.participating }} participants
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

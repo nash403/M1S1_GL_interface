@@ -6,8 +6,8 @@ angular
         date: (new Date(2015, 11, 24)),
         creneaux:[
           {
-            debut: (new Date(2015, 11, 24)).setHours(11,30,0,0),
-            fin:(new Date(2015, 11, 24)).setHours(12,30,0,0),
+            debut: (new Date(2015, 11, 24)).setHours(8,45,0,0),
+            fin:(new Date(2015, 11, 24)).setHours(11,0,0,0),
             participating:10
           },
           {
@@ -21,8 +21,8 @@ angular
             participating:10
           },
           {
-            debut: (new Date(2015, 11, 24)).setHours(11,30,0,0),
-            fin:(new Date(2015, 11, 24)).setHours(12,30,0,0),
+            debut: (new Date(2015, 11, 24)).setHours(8,45,0,0),
+            fin:(new Date(2015, 11, 24)).setHours(11,0,0,0),
             participating:4,
           },
           {

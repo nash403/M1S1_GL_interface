@@ -7,16 +7,26 @@ angular
         subscribedto:[
           {
             date:(new Date(2015, 11, 24)).setHours(0,0,0,0),
-            cr:0
+            cr:0,
+            detail:{
+              debut: (new Date(2015, 11, 24)).setHours(11,30,0,0),
+              fin:(new Date(2015, 11, 24)).setHours(12,30,0,0),
+              participating:10
+            }
           },
           {
             date:(new Date(2015, 11, 24)).setHours(0,0,0,0),
-            cr:2
+            cr:2,
+            detail:{
+              debut: (new Date(2015, 11, 24)).setHours(11,30,0,0),
+              fin:(new Date(2015, 11, 24)).setHours(12,30,0,0),
+              participating:10
+            }
           }
         ]
       }
     };
-    var c = "pmr";
+    var c = null;
     var adm = false;
     return {
       signin: function (login,mdp) {
@@ -29,7 +39,7 @@ angular
         if (adm)adm = false;
         c = null;
       },
-      isloggedin:true,
+      isloggedin:false,
       current: function() { return c;},
       isSubcribed: function (date,cr){
         if (!this.isloggedin) return false;
@@ -41,11 +51,15 @@ angular
         }
         return false;
       },
-      subscribe: function (date,cr) {
+      mesSeances: function () {
+        return users[this.current()]?users[this.current()].subscribedto:[];
+      },
+      subscribe: function (date,cr,det) {
         if (!this.isloggedin) return false;
         users[this.current()].subscribedto.push({
           date:new Date(date).setHours(0,0,0,0),
-          cr:cr
+          cr:cr,
+          detail:det
         });
         return true;
       },

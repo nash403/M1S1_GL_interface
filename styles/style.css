@@ -71,6 +71,9 @@ form.pmr-form-error {
   height: 60px;
   background-color: #F5F5F5;
 }
+.pmr-footer a {
+  margin: 0 20px;
+}
 .container .text-footer {
   margin: 20px 0;
 }
