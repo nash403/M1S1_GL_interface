@@ -1,0 +1,20 @@
+<div pmr-planning="">
+  <h1 class="page-header">Planning des séances</h1>
+  <uib-datepicker ng-model="dt" min-date="minDate" max-date="maxDate" show-weeks="true" class="well well-sm planning-datepicker" custom-class="getDayClass(date, mode)" starting-day="1"></uib-datepicker>
+  <p ng-show="!noCreneau">
+    Pas de séances ce jour.
+  </p>
+  <div class="panel panel-default" ng-if="noCreneau">
+    <div class="panel-heading">
+      <h3 class="panel-title">Séance du {{ dt | date: 'EEEE, d MMMM yyyy' }}</h3>
+    </div>
+    <div class="panel-body">
+      <div class="list-group" ng-repeat="cr in getCreneaux(dt) track by $index">
+        <h2><small>Séance {{ $index + 1 }}</small> <span ng-if="isCo()"><a href="#"class="btn btn-success pull-right" ng-if="!isIn(dt,$index)">S'inscrire</a><a href="#"class="btn btn-default pull-right btn-deco" ng-if="isIn(dt,$index)">Se désinscrire</a></span><span class="glyphicon glyphicon-exclamation-sign pull-right" ng-if="!isCo()" uib-tooltip="Connectez-vous pour pouvoir vous inscrire !" tooltip-placement="left"></span></h2>
+        <span class="list-group-item list-group-item-info"><span class="label label-primary creneau-info">Début :</span> {{ cr.debut | date:'HH : mm'}}</span>
+        <span class="list-group-item list-group-item-info"><span class="label label-primary creneau-info">Fin :</span> {{ cr.fin | date:'HH : mm'}}</span>
+        <span class="list-group-item"><small>Nombre de participants: {{ cr.participating }}</small></span>
+      </div>
+    </div>
+  </div>
+</div>

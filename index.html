@@ -25,8 +25,7 @@
 			<div class="row">
 				<side-options></side-options>
 				<div class="col-md-10 col-md-offset-2 col-sm-9 col-sm-offset-3 pmr-main">
-						<h1 class="page-header">TOTO</h1>
-						<pmr-planning></pmr-planning>
+						<div ui-view=""></div>
 				</div>
 			</div>
 		</div>
@@ -37,16 +36,21 @@
 		</footer>
 
 		<!-- lib angular js scripts -->
-		<script type="text/javascript" src="lib/angular/angular.min.js"></script>
-		<script type="text/javascript" src="lib/angular/angular-ui-router.min.js"></script>
-		<script type="text/javascript" src="lib/angular/angular-animate.min.js"></script>
-		<script type="text/javascript" src="lib/angular/ui-bootstrap.min.js"></script>
+		<script type="text/javascript" src="lib/angular-1.4.8/angular.min.js"></script>
+		<script type="text/javascript" src="lib/angular-1.4.8/angular-ui-router.min.js"></script>
+		<script type="text/javascript" src="lib/angular-1.4.8/angular-animate.min.js"></script>
+		<script type="text/javascript" src="lib/angular-1.4.8/i18n/angular-locale_fr-fr.js"></script>
+		<script type="text/javascript" src="lib/bootstrap/ui-bootstrap-tpls-0.14.3.min.js"></script>
 
 		<!-- angular app model-->
 		<script type="text/javascript" src="scripts/pmr.mdl.js"></script>
+		<!-- angular app configuration -->
+		<script type="text/javascript" src="scripts/pmr.cfg.js"></script>
 		<!-- angular services -->
 		<script type="text/javascript" src="scripts/services/users.service.js"></script>
+		<script type="text/javascript" src="scripts/services/seances.service.js"></script>
 		<!-- angular directives -->
+		<script type="text/javascript" src="scripts/directives/accueil.directive.js"></script>
 		<script type="text/javascript" src="scripts/directives/navbar-login.directive.js"></script>
 		<script type="text/javascript" src="scripts/directives/side-options.directive.js"></script>
 		<script type="text/javascript" src="scripts/directives/side-option.directive.js"></script>

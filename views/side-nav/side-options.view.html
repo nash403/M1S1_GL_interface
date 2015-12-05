@@ -1,5 +1,5 @@
 <div class="col-md-2 col-sm-3 pmr-sidebar">
   <ul class="nav pmr-nav-sidebar">
-    <li ng-repeat="opt in options" ng-class="{active:opt.selected}" side-option="" ng-click="toggle()"><a href="#">{{ opt.name }}</a></li>
+    <li ng-repeat="opt in options" ng-if="isCo() || !opt.requireCo" ng-class="{active:opt.selected}" side-option="" ng-click="toggle()"><a href="{{'#/'+opt.id}}">{{ opt.name }}</a></li>
   </ul>
 </div>
