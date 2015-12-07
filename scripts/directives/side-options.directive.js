@@ -39,12 +39,12 @@ angular
             name:"Mes vidéos",
             id:"videos",
             requireCo:true
-          }/*,
+          },
           {
             name:"Boîte à idéee",
             id:"idee",
             requireCo:true
-          }*/];
+          }];
       }
     }
   }]);

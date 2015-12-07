@@ -4,63 +4,6 @@ angular
     var seances = {
       "pmr":[
         {
-          date: (new Date(2015, 7, 12)),
-          creneaux:[
-            {
-              debut: (new Date(2015, 7, 12)).setHours(11,30,0,0),
-              fin:(new Date(2015, 7, 12)).setHours(12,30,0,0),
-              participating:9,
-              all:[
-                {
-                  id:"toto1",
-                  pos:1,
-                  pts:628
-                },
-                {
-                  id:"toto2",
-                  pos:2,
-                  pts:620
-                },
-                {
-                  id:"pmr",
-                  pos:3,
-                  pts:590
-                },
-                {
-                  id:"toto3",
-                  pos:4,
-                  pts:400
-                },
-                {
-                  id:"toto4",
-                  pos:5,
-                  pts:399
-                },
-                {
-                  id:"toto5",
-                  pos:6,
-                  pts:368
-                },
-                {
-                  id:"toto6",
-                  pos:7,
-                  pts:360
-                },
-                {
-                  id:"toto7",
-                  pos:8,
-                  pts:344
-                },
-                {
-                  id:"toto8",
-                  pos:9,
-                  pts:200
-                }
-              ]
-            }
-          ]
-        },
-        {
           date: (new Date(2015, 10, 18)),
           creneaux:[
             {
@@ -149,6 +92,63 @@ angular
                   id:"toto3",
                   pos:5,
                   pts:360
+                }
+              ]
+            }
+          ]
+        },
+        {
+          date: (new Date(2015, 7, 12)),
+          creneaux:[
+            {
+              debut: (new Date(2015, 7, 12)).setHours(11,30,0,0),
+              fin:(new Date(2015, 7, 12)).setHours(12,30,0,0),
+              participating:9,
+              all:[
+                {
+                  id:"toto1",
+                  pos:1,
+                  pts:628
+                },
+                {
+                  id:"toto2",
+                  pos:2,
+                  pts:620
+                },
+                {
+                  id:"pmr",
+                  pos:3,
+                  pts:590
+                },
+                {
+                  id:"toto3",
+                  pos:4,
+                  pts:400
+                },
+                {
+                  id:"toto4",
+                  pos:5,
+                  pts:399
+                },
+                {
+                  id:"toto5",
+                  pos:6,
+                  pts:368
+                },
+                {
+                  id:"toto6",
+                  pos:7,
+                  pts:360
+                },
+                {
+                  id:"toto7",
+                  pos:8,
+                  pts:344
+                },
+                {
+                  id:"toto8",
+                  pos:9,
+                  pts:200
                 }
               ]
             }

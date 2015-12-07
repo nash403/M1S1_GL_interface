@@ -41,4 +41,8 @@ angular
         url : '/fidelite',
         templateUrl : 'views/fidelisation/pts-fidelite.view.html'
       })
+      .state('idee', {
+        url : '/idee',
+        templateUrl : 'views/boite-idees/idees.view.html'
+      })
   }
